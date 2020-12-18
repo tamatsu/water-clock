@@ -2,6 +2,8 @@ import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import typescript from 'rollup-plugin-typescript2'
  
+const production = !process.env.ROLLUP_WATCH
+
 export default {
   input: 'src/App.ts',
   output: {
@@ -10,10 +12,11 @@ export default {
   },
   plugins: [
     typescript(),
-    serve({
+
+		!production && serve({
       contentBase: 'public',
       port: 3000
     }),
-    livereload('public'),
+		!production && livereload('public'),
   ],
 }
