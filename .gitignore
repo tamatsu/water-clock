@@ -3,3 +3,4 @@ node_modules
 
 # Firebase
 public/404.html
+.firebaserc
