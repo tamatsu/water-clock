@@ -1,6 +1,6 @@
 import { init } from './App.ts'
 
-test('init results null', () => {
+test('initial model has tick 0.', () => {
   const [ model, cmd ] = init()
-  expect(model).toBe(null)
+  expect(model.tick).toBe(0)
 })
